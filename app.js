@@ -1,4 +1,4 @@
-// Node modules
+// Node Modules
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require('util');
@@ -6,12 +6,13 @@ const util = require('util');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
-// Lib modules
+// Lib Modules
 const timestamp = require("./lib/timestamp");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
+//Codes for Validation
 const validate = {
     required: input => input !== '' ? true : "This field is required.",
     name: input => input !== '' ? true : "Please enter a name.",
@@ -19,6 +20,7 @@ const validate = {
     email: input => input.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+\@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi) ? true : "Please enter a valid email address."
 }
 
+//Questions to get Info
 const questions = {
     type: function() {
         return {
@@ -38,6 +40,7 @@ const questions = {
     }
 };
 
+//Function to collect information
 let employees = [];
 
 async function addRole(member) {
@@ -64,6 +67,7 @@ function getHTMLModule(file) {
     return readFile(file, "utf8");
 }
 
+//Gets html information, prints to cards and puts them together
 async function generateHTML() {
     let Template = {
         Main: await getHTMLModule("./templates/main.html"),
@@ -97,6 +101,7 @@ async function generateHTML() {
     createHTML(completeHTML);
 }
 
+//Function to create html file and name
 async function createHTML(html) {
     console.log("Creating HTML...");
     let file = `team-${timestamp()}.html`;
