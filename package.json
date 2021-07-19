@@ -1,0 +1,23 @@
+{
+  "name": "banuteam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "banuayozturk",
+  "license": "",
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "util": "^0.12.4",
+    "zest": "^0.1.3"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
