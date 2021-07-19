@@ -21,7 +21,7 @@ First run **npm install** in order to install the following npm package dependen
 
 Invoked the application with **node app.js**.
 
-![how-to-use](./images/screenvideo.gif)
+![generated-html-walkthrough](./images/teamrecording.gif)
 
 ## Usage
 
